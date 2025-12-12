@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%} {% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="{%static "Community/base.css"%}">
+    {% block styles %}{% endblock  %}
+</head>
+<body>
+    <div class="page-wrapper">
+        {%include "Community/partials/nav.html"%}
+        {% block content %}
+        
+        {% endblock  %}
+
+        {%include "Community/partials/footer.html"%}
+    </div>
+</body>
+</html>

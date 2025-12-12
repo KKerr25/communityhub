@@ -1,0 +1,21 @@
+{% extends "Community/base.html" %}
+{% load static %}
+{% block styles %}
+<link rel="stylesheet" href="{%static "Community/eventForm.css"%}">
+{% endblock %}
+
+{% block content %}
+<div class="event-form">
+  <h2>Create a new event</h2>
+
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <div class="event-form-buttons">
+      <button type="submit" class="btn-submit">Post Event</button>
+      <a href="{% url 'index' %}" class="btn-cancel">Cancel</a>
+    </div>
+  </form>
+</div>
+{% endblock  %}

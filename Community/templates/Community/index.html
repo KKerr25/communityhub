@@ -1,0 +1,24 @@
+{% extends "Community/base.html" %}
+
+{% load static %}
+
+{% block styles %} <link rel="stylesheet" href="{%static "Community/index.css"%}"> {%endblock  %}
+
+{% block content %}
+
+<div class="header">
+    <h1>Welcome to CommunityHub — Where Neighbors Become Legends</h1>
+    <p>Discover events, meet new people, and make your community unforgettable.</p>
+</div>
+
+<div class="events">
+    {% for event in events %}
+    <div class="event-card">
+        <h4>{{ event.title }}</h4>
+        <p>{{ event.date }}</p>
+        <a href="{% url 'event-detail' event.pk %}" class="details-btn">Event Details</a>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock  %}

@@ -1,0 +1,23 @@
+{% extends "Community/base.html" %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{%static "Community/eventDetail.css"%}">
+{% endblock %}
+
+{% block content %}
+
+<div class="event-detail">
+    <h2>{{ event.title }}</h2>
+
+    <p class="date">{{ event.date }}</p>
+
+    <p class="description">{{ event.description }}</p>
+
+    <p class="location"><i class="bi bi-geo-alt"></i> {{event.location}} </p>
+
+    <a href="{% url 'index' %}" class="back-btn">Back to Events</a>
+</div>
+
+{% endblock  %}

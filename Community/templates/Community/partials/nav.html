@@ -1,0 +1,17 @@
+{% load static %}
+
+{% block styles %}<link rel="stylesheet" href="{% static 'Community/nav.css' %}">{% endblock %}
+
+<nav>
+    <div>
+        <h2>Community Hub</h2>
+        <ul>
+            <li>
+                <a href="{%url "index"%}" class="{%if request.path == '/'%}active{%endif%}"><i class="bi bi-house-door"></i> Home</a>
+            </li>
+            <li>
+                <a href="{%url "event-form"%}" class="{%if request.path == '/event-form/'%}active{%endif%}"><i class="bi bi-calendar-plus"></i> New Event</a>
+            </li>
+        </ul>
+    </div>
+</nav>
