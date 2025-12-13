@@ -20,7 +20,7 @@ def event_Details(request,pk):
 
 
 class EventFormView(FormView):
-    template_name = "Community/Eventform.html"
+    template_name = "Community/eventForm.html"
     form_class = EventForm
     success_url = "/"
 
